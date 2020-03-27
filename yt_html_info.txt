@@ -1,0 +1,3 @@
+span#eow-title = title
+div.yt-user-info > a = channel name
+
