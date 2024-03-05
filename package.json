@@ -1,12 +1,25 @@
 {
   "name": "youtube_downloader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file=.env index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "Youtube Downloader",
+    "youtube_downloader",
+    "youtube downloader",
+    "yt",
+    "downloader",
+    "youtube"
+  ],
+  "author": "Brayan Steven Garcia Millan",
+  "license": "ISC",
+  "dependencies": {
+    "progress-estimator": "^0.3.1"
+  },
+  "devDependencies": {
+    "youtube-dl-exec": "^2.5.7"
+  }
 }

@@ -1,0 +1,22 @@
+# VARS FOR CONTROLLING YTDL BEHAVIOR
+YTDL_SIMULATE=false
+YTDL_AUDIO_FORMAT="best"
+YTDL_AUDIO_QUALITY=0
+YTDL_EXTRACT_AUDIO=true
+YTDL_DUMP_SINGLE_JSON=true
+
+# Output folder for the download files
+YTDL_DEFAULT_OUTPUT_URL="/home/example_user/example_output_folder"
+
+# You can change the default input file putting here your coustom route to it
+# With this file you can simply put the links of each youtube video splitted by an endl
+# The program will read each line and use it as a link for download everything
+
+# Leave this empty if you want to put the downloaded files in:
+# (cwd /downloaded) ONLY IF YTDL_DEFAULT_OUTPUT_URL is also empty
+# YTDL_DEFAULT_OUTPUT_URL/ IF YTDL_DEFAULT_OUTPUT_URL is not empty
+YTDL_DEFAULT_INPUT_FILE=""
+
+# VARS FOR CONTROLLING DEBUGGING AND PREVIOUS INPUT FLOW
+APP_SHOULD_PRINT_ENV_VARS=false
+APP_SHOULD_CLEAN_INPUT_FILE=true
