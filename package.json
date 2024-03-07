@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node --env-file=.env index.js",
-    "simulate": "YTDL_SIMULATE=true APP_SHOULD_CLEAN_INPUT_FILE=false node --env-file=.env index.js"
+    "simulate": "YTDL_SIMULATE=true APP_SHOULD_CLEAN_INPUT_FILE=false node --env-file=.env index.js",
+    "no-remove": "APP_SHOULD_CLEAN_INPUT_FILE=false node --env-file=.env index.js"
   },
   "keywords": [
     "Youtube Downloader",
