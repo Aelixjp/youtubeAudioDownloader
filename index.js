@@ -14,6 +14,8 @@ const YTDL_SIMULATE = !checkBool("YTDL_SIMULATE");
 const YTDL_DUMP_SINGLE_JSON = checkBool("YTDL_DUMP_SINGLE_JSON");
 const YTDL_EXTRACT_AUDIO = checkBool("YTDL_EXTRACT_AUDIO");
 const YTDL_SHOULD_ADD_METADATA = checkBool("YTDL_SHOULD_ADD_METADATA");
+const YTDL_SHOULD_WRITE_THUMBNAIL = checkBool("YTDL_SHOULD_WRITE_THUMBNAIL");
+const YTDL_SHOULD_WRITE_SUBTITLES = checkBool("YTDL_SHOULD_WRITE_SUBTITLES");
 const APP_SHOULD_CLEAN_INPUT_FILE = checkBool("APP_SHOULD_CLEAN_INPUT_FILE");
 const APP_SHOULD_PRINT_ENV_VARS = checkBool("APP_SHOULD_PRINT_ENV_VARS");
 
@@ -31,16 +33,18 @@ const downloadInfoFileDefaultRoute = YTDL_DEFAULT_INPUT_FILE || `${defaultRoute}
 function printEnvVars() {
   console.log(
     {
-      YTDL_DEFAULT_INPUT_FILE: YTDL_DEFAULT_INPUT_FILE,
-      YTDL_DEFAULT_OUTPUT_URL: YTDL_DEFAULT_OUTPUT_URL,
-      YTDL_AUDIO_FORMAT: YTDL_AUDIO_FORMAT,
+      YTDL_DEFAULT_INPUT_FILE,
+      YTDL_DEFAULT_OUTPUT_URL,
+      YTDL_AUDIO_FORMAT,
       YTDL_SIMULATE: !YTDL_SIMULATE,
-      YTDL_DUMP_SINGLE_JSON: YTDL_DUMP_SINGLE_JSON,
-      YTDL_EXTRACT_AUDIO: YTDL_EXTRACT_AUDIO,
-      YTDL_AUDIO_QUALITY: YTDL_AUDIO_QUALITY,
-      YTDL_SHOULD_ADD_METADATA: YTDL_SHOULD_ADD_METADATA,
-      APP_SHOULD_CLEAN_INPUT_FILE: APP_SHOULD_CLEAN_INPUT_FILE,
-      APP_SHOULD_PRINT_ENV_VARS: APP_SHOULD_PRINT_ENV_VARS
+      YTDL_DUMP_SINGLE_JSON,
+      YTDL_EXTRACT_AUDIO,
+      YTDL_AUDIO_QUALITY,
+      YTDL_SHOULD_ADD_METADATA,
+      YTDL_SHOULD_WRITE_THUMBNAIL,
+      YTDL_SHOULD_WRITE_SUBTITLES,
+      APP_SHOULD_CLEAN_INPUT_FILE,
+      APP_SHOULD_PRINT_ENV_VARS
     },
     "\n"
   );
@@ -73,10 +77,12 @@ function downloadVideos(videosInfo) {
       {
         noSimulate: YTDL_SIMULATE || null,
         dumpSingleJson: YTDL_DUMP_SINGLE_JSON || true,
-        extractAudio: YTDL_EXTRACT_AUDIO || true,
+        extractAudio: YTDL_EXTRACT_AUDIO || null,
         audioFormat: YTDL_AUDIO_FORMAT || "best",
         audioQuality: YTDL_AUDIO_QUALITY || 0,
         addMetadata: YTDL_SHOULD_ADD_METADATA || null,
+        writeSubs: YTDL_SHOULD_WRITE_SUBTITLES || null,
+        writeThumbnail: YTDL_SHOULD_WRITE_THUMBNAIL || null,
         //output: `${defaultRoute}/%(title)s.%(ext)s`
         output: `${defaultRoute}/%(title)s.${YTDL_AUDIO_FORMAT}`
       }
