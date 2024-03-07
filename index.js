@@ -74,12 +74,17 @@ function downloadVideos(videosInfo) {
         extractAudio: YTDL_EXTRACT_AUDIO || true,
         audioFormat: YTDL_AUDIO_FORMAT || "best",
         audioQuality: YTDL_AUDIO_QUALITY || 0,
-        output: `${defaultRoute}/%(title)s.%(ext)s`
+        //output: `${defaultRoute}/%(title)s.%(ext)s`
+        output: `${defaultRoute}/%(title)s.${YTDL_AUDIO_FORMAT}`
       }
     )
 
     allPromiseVideos.push(logger(promise, `Obtaining data...`).then(result => {
-      const { title, channel, audio_ext, video_ext, duration_string, channel_id } = result;
+      let { title, channel, audio_ext, video_ext, duration_string, channel_id } = result;
+
+      if (YTDL_AUDIO_FORMAT !== "") {
+        audio_ext = YTDL_AUDIO_FORMAT;
+      }
 
       console.log(
         `\x1b[32m\nDownloaded:\x1b[37m ${title}.${audio_ext || video_ext} \n\x1b[34mChannel:\x1b[37m ${channel}\n`,
