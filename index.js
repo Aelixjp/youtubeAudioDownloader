@@ -13,6 +13,7 @@ const YTDL_AUDIO_FORMAT = checkString("YTDL_AUDIO_FORMAT")
 const YTDL_SIMULATE = !checkBool("YTDL_SIMULATE");
 const YTDL_DUMP_SINGLE_JSON = checkBool("YTDL_DUMP_SINGLE_JSON");
 const YTDL_EXTRACT_AUDIO = checkBool("YTDL_EXTRACT_AUDIO");
+const YTDL_SHOULD_ADD_METADATA = checkBool("YTDL_SHOULD_ADD_METADATA");
 const APP_SHOULD_CLEAN_INPUT_FILE = checkBool("APP_SHOULD_CLEAN_INPUT_FILE");
 const APP_SHOULD_PRINT_ENV_VARS = checkBool("APP_SHOULD_PRINT_ENV_VARS");
 
@@ -37,6 +38,7 @@ function printEnvVars() {
       YTDL_DUMP_SINGLE_JSON: YTDL_DUMP_SINGLE_JSON,
       YTDL_EXTRACT_AUDIO: YTDL_EXTRACT_AUDIO,
       YTDL_AUDIO_QUALITY: YTDL_AUDIO_QUALITY,
+      YTDL_SHOULD_ADD_METADATA: YTDL_SHOULD_ADD_METADATA,
       APP_SHOULD_CLEAN_INPUT_FILE: APP_SHOULD_CLEAN_INPUT_FILE,
       APP_SHOULD_PRINT_ENV_VARS: APP_SHOULD_PRINT_ENV_VARS
     },
@@ -74,6 +76,7 @@ function downloadVideos(videosInfo) {
         extractAudio: YTDL_EXTRACT_AUDIO || true,
         audioFormat: YTDL_AUDIO_FORMAT || "best",
         audioQuality: YTDL_AUDIO_QUALITY || 0,
+        addMetadata: YTDL_SHOULD_ADD_METADATA || null,
         //output: `${defaultRoute}/%(title)s.%(ext)s`
         output: `${defaultRoute}/%(title)s.${YTDL_AUDIO_FORMAT}`
       }

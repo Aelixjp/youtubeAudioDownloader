@@ -4,6 +4,7 @@ YTDL_AUDIO_FORMAT="wav"
 YTDL_AUDIO_QUALITY=0
 YTDL_EXTRACT_AUDIO=true
 YTDL_DUMP_SINGLE_JSON=true
+YTDL_SHOULD_ADD_METADATA=true
 
 # Output folder for the download files
 YTDL_DEFAULT_OUTPUT_URL="/home/example_user/example_output_folder"
