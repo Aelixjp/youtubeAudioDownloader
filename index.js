@@ -22,7 +22,7 @@ const YTDL_AUDIO_QUALITY = checkNum("YTDL_AUDIO_QUALITY");
 const defaultDownloadsFolderName = "downloads";
 
 const defaultRoute = YTDL_DEFAULT_OUTPUT_URL || path.join(__dirname, defaultDownloadsFolderName);
-const downloadInfoFileDefaultRoute = YTDL_DEFAULT_INPUT_FILE || `${defaultRoute}/songsToDownload.txt`;
+const downloadInfoFileDefaultRoute = YTDL_DEFAULT_INPUT_FILE || `${defaultRoute}/.songsToDownload.txt`;
 
 /**
  * For debugging purposes...
