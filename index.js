@@ -82,7 +82,7 @@ function downloadVideos(videosInfo) {
         audioQuality: YTDL_AUDIO_QUALITY || 0,
         addMetadata: YTDL_SHOULD_ADD_METADATA || null,
         writeSubs: YTDL_SHOULD_WRITE_SUBTITLES || null,
-        writeThumbnail: YTDL_SHOULD_WRITE_THUMBNAIL || null,
+        embedThumbnail: YTDL_SHOULD_WRITE_THUMBNAIL || null,
         //output: `${defaultRoute}/%(title)s.%(ext)s`
         output: `${defaultRoute}/%(title)s.${YTDL_AUDIO_FORMAT}`
       }
